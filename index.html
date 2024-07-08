@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <header class="px-3 py-4 flex overflow-hidden">
+        <nav class="mr-4">
+            <ul class="flex gap-8">
+                <li>Overview</li>
+                <li>Notification</li>
+                <li>Analytics</li>
+                <li>Saved Reports</li>
+                <li>Trade History</li>
+                <li>User Reports</li>
+            </ul>
+        </nav>
+
+        <div class="search rounded-lg">
+            <input type="search" placeholder="Search" name="search" id="">
+        </div>
+
+    </header>
+
+    <main>
+        <div class="above">
+        <section class="trade">
+            <h1 class="font-bold">Trade history</h1>
+            <p>View all your team's trades and transactions</p>
+
+            <div class="trade-buttons">
+                <input type="button" value="All Trades" class="trade-button">
+                <input type="button" value="Buy Side" class="trade-button">
+                <input type="button" value="Sell Side" class="trade-button">
+            </div>
+        </section>
+
+        <section class="table-funcs">
+            <button class="btn " type="button" value="Download CSV">Download CSV</button>
+            <button class="btn "  type="button" value="Add">Add</button>
+        </section>
+        </div>
+    
+
+    <div class="table w-full">
+        <input type="search" placeholder="Search for all trades" name="search" id="">
+        <input type="datetime" name="search-dates" id="">
+        <input type="button" value="Filters">
+        <table class="w-full">
+            <th>
+                <tr>
+                    <td>Trade</td>
+                    <td>Order amount</td>
+                    <td>Delivery Date</td>
+                    <td>Status</td>
+                    <td>Executed By</td>
+                
+                </tr>
+            </th>
+            <tbody>
+                <tr>
+                    <td>
+                        <dt><input type="radio" name="" id="">TSLA Buy</dt>
+                        <dd>Tesla, Inc</dd>
+                    </td>
+                    <td>$30,021.23</td>
+                    <td><time datetime="20220113">Jan 13 2022</time></td>
+                    <td><span>Processing</span></td>
+                    <td><div class="executed-by-row">
+                        <img src="../img.img" alt="">
+                        <dt>Olivia Rhye</dt>
+                        <dd>olivia@untitledui.com</dd>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="" id="">
+                        <dt>MTCH Sell</dt>
+                        <dd>Match Group, Inc</dd>
+                    </td>
+                    <td>$10,045.00</td>
+                    <td><time datetime="20220113">Jan 13 2022</time></td>
+                    <td><span class="success">Success</span></td>
+                    <td><div class="executed-by-row">
+                        <img src="../img.img" alt="">
+                        <dt>Phoenix baker</dt>
+                        <dd>phoenix@untitledui.com</dd>
+                    </div></td>
+                </tr>
+            </tbody>
+        </table>
+        </main>
+    </div>
+</body>
+</html>
