@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <header class="px-3 py-4 flex overflow-hidden">
+    <header class="px-3 py-4 flex overflow-hidden justify-between">
         <nav class="mr-4">
-            <ul class="flex gap-8">
+            <ul class="flex gap-8 list-none">
                 <li>Overview</li>
                 <li>Notification</li>
                 <li>Analytics</li>
@@ -20,36 +20,40 @@
             </ul>
         </nav>
 
-        <div class="search rounded-lg">
-            <input type="search" placeholder="Search" name="search" id="">
+        <div class="search">
+            <input type="search" class="border border-grey-400 rounded" placeholder="Search" name="search" id="">
         </div>
 
     </header>
 
     <main>
-        <div class="above">
-        <section class="trade">
-            <h1 class="font-bold">Trade history</h1>
-            <p>View all your team's trades and transactions</p>
+        <div class="above flex justify-between mb-4">
+            <section class="trade">
+                <h1 class="font-bold">Trade history</h1>
+                <p>View all your team's trades and transactions</p>
 
-            <div class="trade-buttons">
-                <input type="button" value="All Trades" class="trade-button">
-                <input type="button" value="Buy Side" class="trade-button">
-                <input type="button" value="Sell Side" class="trade-button">
-            </div>
-        </section>
+                <div class="trade-buttons inline-flex rounded-md shadow-sm">
+                    <input type="button" value="All Trades" class="trade-button border x-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700">
+                    <input type="button" value="Buy Side" class="trade-button border">
+                    <input type="button" value="Sell Side" class="trade-button border x-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700">
+                </div>
+            </section>
 
-        <section class="table-funcs">
-            <button class="btn " type="button" value="Download CSV">Download CSV</button>
-            <button class="btn "  type="button" value="Add">Add</button>
-        </section>
+            <section class="table-funcs ">
+                <button class="btn border" type="button" value="Download CSV">Download CSV</button>
+                <button class="btn border"  type="button" value="Add">Add</button>
+            </section>
         </div>
     
 
     <div class="table w-full">
-        <input type="search" placeholder="Search for all trades" name="search" id="">
-        <input type="datetime" name="search-dates" id="">
-        <input type="button" value="Filters">
+        <div class="table-top flex justify-between">
+            <input type="search" class="border w-50" placeholder="Search for all trades" name="search" id="">
+            <div class="left">
+                <input type="date" value="2018-07-22" class="border" name="search-dates" id="">
+                <input type="button" class="border" value="Filters">
+            </div>
+        </div>
         <table class="w-full">
             <th>
                 <tr>
@@ -63,13 +67,16 @@
             </th>
             <tbody>
                 <tr>
-                    <td>
-                        <dt><input type="radio" name="" id="">TSLA Buy</dt>
-                        <dd>Tesla, Inc</dd>
+                    <td class="flex">
+                        <input type="checkbox" class="square rounded-md mr-3" name="" id="">
+                        <div class="desc">
+                            <dt>TSLA Buy</dt>
+                            <dd>Tesla, Inc</dd>
+                        </div>
                     </td>
                     <td>$30,021.23</td>
                     <td><time datetime="20220113">Jan 13 2022</time></td>
-                    <td><span>Processing</span></td>
+                    <td><span class="border border-grey-400 bg-indigo-300 rounded-xl">Processing</span></td>
                     <td><div class="executed-by-row">
                         <img src="../img.img" alt="">
                         <dt>Olivia Rhye</dt>
@@ -77,14 +84,16 @@
                     </div></td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="radio" name="" id="">
-                        <dt>MTCH Sell</dt>
-                        <dd>Match Group, Inc</dd>
+                    <td class="flex">
+                        <input type="checkbox" class="mr-3" name="" id="">
+                        <div class="desc">
+                            <dt>MTCH Sell</dt>
+                            <dd>Match Group, Inc</dd>
+                        </div>
                     </td>
                     <td>$10,045.00</td>
                     <td><time datetime="20220113">Jan 13 2022</time></td>
-                    <td><span class="success">Success</span></td>
+                    <td><span class="border border-grey-400 rounded-xl bg-green-400">Success</span></td>
                     <td><div class="executed-by-row">
                         <img src="../img.img" alt="">
                         <dt>Phoenix baker</dt>
@@ -92,6 +101,11 @@
                     </div></td>
                 </tr>
             </tbody>
+            <tfoot class="flex justify-between">
+                <input type="button" value="Previous">
+
+                <input type="button" value="Next">
+            </tfoot>
         </table>
         </main>
     </div>
