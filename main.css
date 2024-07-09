@@ -1,11 +1,4 @@
-body{
-    padding: 0;
-    margin: 0;
-}
 
-header{
-    border-bottom: 1px solid grey;
-}
 
 header ul li{
     align-content: center;
@@ -18,12 +11,4 @@ header ul li:hover {
     color: rgb(35, 35, 221);
     background-color: rgba(164, 172, 209, 0.5);
     border-radius: 4px;
-}
-
-main {
-    padding: 1em;
-}
-
-tr{
-    border-bottom: 3px solid rgba(148, 148, 148, 0.3);
 }

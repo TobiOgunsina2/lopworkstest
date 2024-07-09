@@ -6,11 +6,12 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./main.css">
+    <script src="https://kit.fontawesome.com/38255c9df1.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header class="px-3 py-4 flex overflow-hidden justify-between">
+<body class="p-0 pb-3 m-0">
+    <header class="px-3 pl-5 py-3 flex overflow-hidden justify-between border border-b-gray ">
         <nav class="mr-4">
-            <ul class="flex gap-8 list-none">
+            <ul class="flex cursor-pointer items-center gap-8 list-none h-full">
                 <li>Overview</li>
                 <li>Notification</li>
                 <li>Analytics</li>
@@ -20,93 +21,212 @@
             </ul>
         </nav>
 
-        <div class="search">
-            <input type="search" class="border border-grey-400 rounded" placeholder="Search" name="search" id="">
+        <div class="search mr-16">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            
+            <input type="search" class="border border-grey-400 rounded-lg w-80 h-10 pl-2 text-md" placeholder="Search" name="search" id=""></input>
         </div>
 
     </header>
 
-    <main>
-        <div class="above flex justify-between mb-4">
-            <section class="trade">
-                <h1 class="font-bold">Trade history</h1>
-                <p>View all your team's trades and transactions</p>
-
-                <div class="trade-buttons inline-flex rounded-md shadow-sm">
-                    <input type="button" value="All Trades" class="trade-button border x-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700">
-                    <input type="button" value="Buy Side" class="trade-button border">
-                    <input type="button" value="Sell Side" class="trade-button border x-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700">
+    <main class="pt-8 px-5 pr-20">
+        <div class="above mb-4">
+            <section class="trade pb-5 flex justify-between">
+                <div class="left">
+                    <h1 class="font-medium text-3xl">Trade history</h1>
+                    <p class="text-gray-600">View all your team's trades and transactions</p>
+                </div>
+                <div class="right">
+                    <button class="btn border rounded-lg w-48 px-2 py-1 text-gray-500" type="button" value="Download CSV"><i class="fa-solid fa-cloud-arrow-down mr-2"></i>Download CSV</button>
+                    <button class="btn border rounded-lg w-20 px-2 py-1 text-white bg-indigo-600"  type="button" value="Add"><i class="fa-solid fa-plus mr-1"></i>Add</button>
                 </div>
             </section>
 
-            <section class="table-funcs ">
-                <button class="btn border" type="button" value="Download CSV">Download CSV</button>
-                <button class="btn border"  type="button" value="Add">Add</button>
-            </section>
+            <div class="trade-buttons inline-flex rounded-md shadow-sm">
+                <input type="button" value="All Trades" class="trade-button border p-2 x-4 py-2 text-sm font-medium text-gray-900 bg-white border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700">
+                <input type="button" value="Buy Side" class="trade-button border p-2 x-4 py-2 text-sm font-medium text-gray-900 bg-white border-gray-200 hover:bg-gray-100 hover:text-blue-700">
+                <input type="button" value="Sell Side" class="trade-button border p-2 x-4 py-2 text-sm font-medium text-gray-900 bg-white border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700">
+            </div>
+            
         </div>
     
 
     <div class="table w-full">
-        <div class="table-top flex justify-between">
-            <input type="search" class="border w-50" placeholder="Search for all trades" name="search" id="">
+        <div class="table-top flex rounded-lg justify-between bg-sky-50 p-2">
+            <input type="search" class="border w-96 pl-2 shadow-sm h-10 rounded-lg" placeholder="Search for trades" name="search" id="">
             <div class="left">
-                <input type="date" value="2018-07-22" class="border" name="search-dates" id="">
-                <input type="button" class="border" value="Filters">
+                <input type="date" value="2018-07-22" class="border rounded-md border-gray-300 w-64 h-10" name="search-dates" id="">
+                <button class="border ml-5 rounded-md border-gray-300 w-20 h-10"><i class="fa-solid fa-filter mr-2"></i>Filters</button>
             </div>
         </div>
+        <div class="main-table p-2 border mt-3 rounded-lg border-grey-800">
         <table class="w-full">
-            <th>
-                <tr>
-                    <td>Trade</td>
-                    <td>Order amount</td>
-                    <td>Delivery Date</td>
-                    <td>Status</td>
-                    <td>Executed By</td>
-                
-                </tr>
-            </th>
+            
+            <tr class="border-b-2 text-lg">
+                <td class="w-2/6 text-lg text-gray-600"><input type="checkbox" class="square rounded-md mr-3" name="" id=""> Trade </td>
+                <td class="text-gray-600">Order amount</td>
+                <td class="text-gray-600">Delivery Date</td>
+                <td class="text-gray-600">Status</td>
+                <td class="w-20 text-gray-600">Executed By</td>
+            
+            </tr>
+            
             <tbody>
-                <tr>
-                    <td class="flex">
-                        <input type="checkbox" class="square rounded-md mr-3" name="" id="">
+                <tr class="h-16 border-b-2">
+                    <td class="">
+                        <div class="td flex items-center h-full">
+                        <input type="checkbox" class="rounded-md mr-3" name="" id="">
                         <div class="desc">
                             <dt>TSLA Buy</dt>
-                            <dd>Tesla, Inc</dd>
+                            <dd class="text-gray-500">Tesla, Inc</dd>
+                        </div>
                         </div>
                     </td>
-                    <td>$30,021.23</td>
-                    <td><time datetime="20220113">Jan 13 2022</time></td>
-                    <td><span class="border border-grey-400 bg-indigo-300 rounded-xl">Processing</span></td>
-                    <td><div class="executed-by-row">
-                        <img src="../img.img" alt="">
-                        <dt>Olivia Rhye</dt>
-                        <dd>olivia@untitledui.com</dd>
+                    <td class="text-gray-500">$30,021.23</td>
+                    <td><time class="text-gray-500" datetime="20220113">Jan 13 2022</time></td>
+                    <td><span class="border border-grey-400 bg-indigo-300 rounded-3xl py-1 px-3 bg-opacity-50 text-blue-950">Processing</span></td>
+                    <td class="w-60"><div class="executed-by-row flex ">
+                        <img src="./images/39.jpg" class="rounded-full w-10 h-10 mr-1" alt="">
+                        <div class="info">
+                            <dt>Olivia Rhye</dt>
+                            <dd class="text-gray-500">olivia@untitledui.com</dd>
+                        </div>
                     </div></td>
+                    <td class="text-blue-500">View</td>
                 </tr>
-                <tr>
-                    <td class="flex">
+                <tr class="h-16 border-b-2">
+                    <td>
+                        <div class="td flex items-center h-full">
                         <input type="checkbox" class="mr-3" name="" id="">
                         <div class="desc">
                             <dt>MTCH Sell</dt>
-                            <dd>Match Group, Inc</dd>
+                            <dd class="text-gray-500">Match Group, Inc</dd>
+                        </div>
                         </div>
                     </td>
-                    <td>$10,045.00</td>
-                    <td><time datetime="20220113">Jan 13 2022</time></td>
-                    <td><span class="border border-grey-400 rounded-xl bg-green-400">Success</span></td>
-                    <td><div class="executed-by-row">
-                        <img src="../img.img" alt="">
-                        <dt>Phoenix baker</dt>
-                        <dd>phoenix@untitledui.com</dd>
+                    <td class="text-gray-500">$10,045.00</td>
+                    <td><time class="text-gray-500" datetime="20220113">Jan 13 2022</time></td>
+                    <td><span class="border border-grey-400 rounded-3xl py-1 px-3 bg-green-400 bg-opacity-50 text-green-950">Success</span></td>
+                    <td class="w-60"><div class="executed-by-row flex">
+                        <img src="./images/0.jpg" class="rounded-full w-10 h-10 mr-1" alt="">
+                        <div class="info">
+                            <dt>Phoenix baker</dt>
+                            <dd class="text-gray-500">phoenix@untitledui.com</dd>
+                        </div>
                     </div></td>
+                    <td class="text-blue-500">View</td>
                 </tr>
-            </tbody>
-            <tfoot class="flex justify-between">
-                <input type="button" value="Previous">
 
-                <input type="button" value="Next">
-            </tfoot>
+                <tr class="h-16 border-b-2">
+                    <td >
+                        <div class="td flex items-center h-full">
+                        <input type="checkbox" class="mr-3" name="" id="">
+                        <div class="desc">
+                            <dt>DDOG BUY</dt>
+                            <dd class="text-gray-500">Datadog Inc</dd>
+                        </div>
+                        </div>
+                    </td>
+                    <td class="text-gray-500">$40,132.16</td>
+                    <td><time class="text-gray-500" datetime="20220113">Jan 13 2022</time></td>
+                    <td><span class="border border-grey-400 rounded-3xl py-1 px-3 bg-green-400 bg-opacity-50 text-green-950">Success</span></td>
+                    <td class="w-60"><div class="executed-by-row flex">
+                        <img src="./images/59.jpg" class="rounded-full w-10 h-10 mr-1" alt="">
+                        <div class="info">
+                            <dt>Lana Steiner</dt>
+                            <dd class="text-gray-500">lana@untitledui.com</dd>
+                        </div>
+                    </div></td>
+                    <td class="text-blue-500">View</td>
+                </tr>
+
+                <tr class="h-16 border-b-2">
+                    <td>
+                        <div class="td flex items-center h-full">
+                        <input type="checkbox" class="mr-3" name="" id="">
+                        <div class="desc">
+                            <dt>ARKG BUY</dt>
+                            <dd class="text-gray-500">ARK Genomic Revolution ETF</dd>
+                        </div>
+                        </div>
+                    </td>
+                    <td class="text-gray-500">$22,665.12</td>
+                    <td><time class="text-gray-500" datetime="20220113">Jan 13 2022</time></td>
+                    <td><span class="border border-grey-400 rounded-3xl py-1 px-3 bg-red-300 bg-opacity-50 text-red-950">Declined</span></td>
+                    <td class="w-60"><div class="executed-by-row flex">
+                        <img src="./images/8.jpg" class="rounded-full w-10 h-10 mr-1" alt="">
+                        <div class="info">
+                            <dt>Demi Wilkinson</dt>
+                            <dd class="text-gray-500">demi@untitledui.com</dd>
+                        </div>
+                    </div></td>
+                    <td class="text-blue-500">View</td>
+                </tr>
+
+                <tr class="h-16 border-b-2">
+                    <td >
+                        <div class="td flex items-center h-full">
+
+                        <input type="checkbox" class="mr-3" name="" id="">
+                        <div class="desc">
+                            <dt>SQ BUY</dt>
+                            <dd class="text-gray-500">Square, Inc.</dd>
+                        </div>
+                        </div>
+                    </td>
+                    <td class="text-gray-500">$18,221.30</td>
+                    <td><time class="text-gray-500" datetime="20220113">Jan 12 2022</time></td>
+                    <td><span class="border border-grey-400 rounded-3xl py-1 px-3 bg-green-400 bg-opacity-50 text-green-950">Success</span></td>
+                    <td class="w-60"><div class="executed-by-row flex">
+                        <img src="./images/18.jpg" class="rounded-full w-10 h-10 mr-1" alt="">
+                        <div class="info">
+                            <dt>Candice Wu</dt>
+                            <dd class="text-gray-500">candice@untitledui.com</dd>
+                        </div>
+                    </div></td>
+                    <td class="text-blue-500">View</td>
+                </tr>
+
+                <tr class="h-16 border-b-2">
+                    <td >
+                        <div class="td flex items-center h-full">
+
+                        <input type="checkbox" class="mr-3" name="" id="">
+                        <div class="desc">
+                            <dt>MSTR SELL</dt>
+                            <dd class="text-gray-500">MicroStrategy, Inc.</dd>
+                        </div>
+                        </div>
+                    </td>
+                    <td class="text-gray-500">$24,118.18</td>
+                    <td><time class="text-gray-500" datetime="20220113">Jan 12 2022</time></td>
+                    <td><span class="border border-grey-400 rounded-3xl py-1 px-3 bg-green-400 bg-opacity-50 text-green-950">Success</span></td>
+                    <td class="w-60"><div class="executed-by-row flex">
+                        <img src="./images/62.jpg" class="rounded-full w-10 h-10 mr-1" alt="">
+                        <div class="info">
+                            <dt>Natali Craig</dt>
+                            <dd class="text-gray-500">natali@untitledui.com</dd>
+                        </div>
+                    </div></td>
+                    <td class="text-blue-500">View</td>
+                </tr>
+                
+            </tbody>
+            
+            
         </table>
+        <tfoot >
+            <div class="footer flex justify-between pt-4 pb-2">
+                <button class="rounded-lg w-48 border-2 border-grey-800 hover:border-blue-800"><i class="fa-solid fa-arrow-left mr-3"></i>Previous</button>
+                
+                <div class="numbers">
+                    <button class="w-6 border rounded-md border-grey-400 hover:bg-blue-200">1</button><button class="w-6 border rounded-md border-grey-400 hover:bg-blue-200">2</button><button class="w-6 border rounded-md border-grey-400 hover:bg-blue-200">3</button> <span>  ....  </span> <button class="w-6 border rounded-md border-grey-400 hover:bg-blue-200">8</button><button class="w-6 border rounded-md border-grey-400 hover:bg-blue-200">9</button><button class="w-6 border rounded-md border-grey-400 hover:bg-blue-200">10</button>
+                </div>
+
+                <button class="rounded-lg w-48 border-2 border-grey-800 hover:border-blue-800">Next<i class="fa-solid fa-arrow-right ml-3"></i></button>
+            </div>
+        </tfoot>
+        </div>
         </main>
     </div>
 </body>
