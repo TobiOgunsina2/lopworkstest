@@ -1,14 +1,1 @@
 
-
-header ul li{
-    align-content: center;
-    padding: 0.1em;
-    text-align: center;
-    flex: 1 0 auto;
-}
-
-header ul li:hover {
-    color: rgb(35, 35, 221);
-    background-color: rgba(164, 172, 209, 0.5);
-    border-radius: 4px;
-}

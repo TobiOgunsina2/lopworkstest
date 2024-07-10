@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./main.css">
     <script src="https://kit.fontawesome.com/38255c9df1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+
 </head>
 <body class="p-0 pb-3 m-0">
     <header class="px-3 pl-5 py-3 flex overflow-hidden justify-between border border-b-gray ">
         <nav class="mr-4">
             <ul class="flex cursor-pointer items-center gap-8 list-none h-full">
-                <li>Overview</li>
-                <li>Notification</li>
-                <li>Analytics</li>
-                <li>Saved Reports</li>
-                <li>Trade History</li>
-                <li>User Reports</li>
+                <li class="flex-auto content-center p-1 px-1 text-center hover:bg-indigo-100 hover:text-blue-800 rounded-md">Overview</li>
+                <li class="flex-auto content-center p-1 px-1 text-center hover:bg-indigo-100 hover:text-blue-800 rounded-md">Notification</li>
+                <li class="flex-auto content-center p-1 px-1 text-center hover:bg-indigo-100 hover:text-blue-800 rounded-md">Analytics</li>
+                <li class="flex-auto content-center p-1 px-1 text-center hover:bg-indigo-100 hover:text-blue-800 rounded-md">Saved Reports</li>
+                <li class="flex-auto content-center p-1 px-1 text-center hover:bg-indigo-100 hover:text-blue-800 rounded-md">Trade History</li>
+                <li class="flex-auto content-center p-1 px-1 text-center hover:bg-indigo-100 hover:text-blue-800 rounded-md">User Reports</li>
             </ul>
         </nav>
 
@@ -85,7 +93,7 @@
                     <td class="text-gray-500">$30,021.23</td>
                     <td><time class="text-gray-500" datetime="20220113">Jan 13 2022</time></td>
                     <td><span class="border border-grey-400 bg-indigo-300 rounded-3xl py-1 px-3 bg-opacity-50 text-blue-950">Processing</span></td>
-                    <td class="w-60"><div class="executed-by-row flex ">
+                    <td class="w-64"><div class="executed-by-row flex ">
                         <img src="./images/39.jpg" class="rounded-full w-10 h-10 mr-1" alt="">
                         <div class="info">
                             <dt>Olivia Rhye</dt>
